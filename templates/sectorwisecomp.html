@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block head%}
+<title>
+    Analysis
+</title>
+{% endblock %}
+
+
+
+{% block body%}
+<div style="text-align:center">
+    <h1 class="display-5 fw-bold">ANALYSIS WITH GOLD </h1>
+</div>
+
+<form method="post" action="/sectorwisecomp" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label">Enter CSV File Only </label>
+        <p>
+            <input type='file' id='file2' name='file2' class="form-control">
+        <p>
+        <div class="mb-auto">
+
+        </div>
+        </p>
+    </div>
+
+    <select id="sector" name="sector" class="btn-secondary dropdown-toggle" aria-label=".form-select-lg example">
+        <option value="SELECT ONE STOCK ">{{"SELECT ONE STOCK "}}</option>
+        {% for st in allname %}
+        <option value="{{st}}">{{st}}</option>
+        {% endfor %}
+
+    </select>
+ 
+    <hr>
+    <div>
+        <input type='submit' id='submitgold' name='submitgold' class='btn btn-info'>
+    </div>
+</form>
+
+
+
+<div id="form-sidebar" class="col-12 col-lg-12 col-md-8 col-sm-12 col-xs-12 p-4 " style="text-align:center">
+    <div class="col-md-6">
+        <div class="bg-light p-1">
+
+
+
+            {{chart_code1|safe}}
+
+        </div>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+{{demo_script_code1|safe}}
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.0.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.0.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.0.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.0.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.0.min.js" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+
+{% endblock %}
+</body>
+
+</html>
