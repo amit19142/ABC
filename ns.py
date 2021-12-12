@@ -72,8 +72,8 @@ def best():
        line_color='white', fill_color=factor_cmap('fruits', palette=Spectral6, factors=fruits))
   p.line(x=fruits, y=counts, color="red", line_width=2)
   p.xgrid.grid_line_color = None
-  p.y_range.start = -50
-  p.y_range.end = 50
+  p.y_range.start =0
+  p.y_range.end =100
 
   p.legend.orientation = "horizontal"
   p.legend.location = "top_center"
