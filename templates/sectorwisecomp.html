@@ -18,25 +18,23 @@
         <p>
             <input type='file' id='file2' name='file2' class="form-control">
         <p>
-        <div class="mb-auto">
+            <select id="sector" name="sector" class="btn-secondary dropdown-toggle"
+                aria-label=".form-select-lg example">
+                <option value="SELECT ONE STOCK ">{{"SELECT ONE STOCK "}}</option>
+                {% for st in allname %}
+                <option value="{{st}}">{{st}}</option>
+                {% endfor %}
 
+            </select>
+        <div class="mb-auto">
+            <input type='submit' id='submit2' name='submit2' class='btn btn-info'>
         </div>
         </p>
     </div>
 
-    <select id="sector" name="sector" class="btn-secondary dropdown-toggle" aria-label=".form-select-lg example">
-        <option value="SELECT ONE STOCK ">{{"SELECT ONE STOCK "}}</option>
-        {% for st in allname %}
-        <option value="{{st}}">{{st}}</option>
-        {% endfor %}
-
-    </select>
- 
-    <hr>
-    <div>
-        <input type='submit' id='submitgold' name='submitgold' class='btn btn-info'>
-    </div>
 </form>
+
+
 
 
 

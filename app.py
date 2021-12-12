@@ -27,6 +27,7 @@ app.config['UPLOAD_FOLDER']='C://Users//AMIT//OneDrive//Desktop//PROJECT//static
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db=SQLAlchemy(app)
 
+allname=[]
 class user(db.Model):
     Uid = db.Column(db.Integer, primary_key=True)
     Uusername = db.Column(db.String(80))
@@ -81,6 +82,7 @@ def login():
             return render_template("login.html")
 
     return render_template("login.html")
+
 
 
  
@@ -145,7 +147,7 @@ def aboutus():
 
 @app.route('/sectorwisecomp',methods=['GET','POST'])
 def sectorwisecomp():
-    allname=[]
+    global allname
 
     if(request.method=='POST'):
         f=request.files['file2']
@@ -158,10 +160,6 @@ def sectorwisecomp():
         return render_template('sectorwisecomp.html',demo_script_code1=demo_script_code1,chart_code1=chart_code1,allname=allname)
     else:
         # df=pd.read_excel('ALL DATA (1).xlsx')
-        
-
-        
-        
         return render_template('sectorwisecomp.html',allname=allname)
 
 
